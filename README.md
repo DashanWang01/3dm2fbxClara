@@ -6,7 +6,8 @@
 1.run "npm install" at the very beginning.
 
 2.run:
-      node convertToFbx.js -fut "YourFileFullPath" "YourClaraUsername" "YourClaraToken"
+     
+     node convertToFbx.js -fut "YourFileFullPath" "YourClaraUsername" "YourClaraToken"
       
       Or
       
