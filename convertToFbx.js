@@ -135,7 +135,11 @@ async function convertFromDirectory(directoryPath) {
 }
 
 async function processFileDir(directoryPath, file, i) {
-    var cmdStr = '"C:/Program Files/Rhinoceros 5 (64-bit)/System/Rhino.exe" /runscript="_-RunPythonScript rihnoConvertFbx.py -exit" ' + '\"' + directoryPath + file + '\"'
+    if(process.platform==='win32'){
+       var cmdStr = '"C:/Program Files/Rhinoceros 5 (64-bit)/System/Rhino.exe" /runscript="_-RunPythonScript rihnoConvertFbx.py -exit" ' + '\"' + directoryPath + file + '\"'
+    }else if(process.platform==='darwin'){
+            //todo
+    }
     // console.log(cmdStr)
     const execF = util.promisify(exec);
     console.log(i, ' process start')
